@@ -8,10 +8,12 @@ class ProductController extends Controller
 {
     public function liste()
     {
-        return "Liste des produits";
+        return view('product-list');
     }
-    public function fiche()
+    public function fiche($id)
     {
-        return "Fiche du produit " . request('id');
+        return view('product-details', [
+            'id'=>$id
+        ]);
     }
 }
