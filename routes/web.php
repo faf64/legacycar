@@ -14,9 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('hello');
+    return "Home Page";
 });
 
+
+Route::get('/product', function () {
+    return "Liste des produits";
+});
+
+
+Route::get('/product/{id}', function () {
+    return "Fiche du produit{id}" . request('id');
+});
+
+Route::get('/cart', function () {
+    return "Panier";
+});
 
 Route::get('/laravel', function () {
     return view('welcome');
