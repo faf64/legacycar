@@ -23,6 +23,4 @@ Route::get('/product/{id}', '\App\Http\Controllers\ProductController@fiche');
 
 Route::get('/cart', '\App\Http\Controllers\CartController@panier');
 
-Route::get('/laravel', function () {
-    return view('welcome');
-});
+
