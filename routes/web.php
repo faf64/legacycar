@@ -13,23 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return "Home Page";
-});
+Route::get('/', '\App\Http\Controllers\HomeController@home');
 
 
-Route::get('/product', function () {
-    return "Liste des produits";
-});
+Route::get('/product', '\App\Http\Controllers\ProductController@liste');
 
 
-Route::get('/product/{id}', function () {
-    return "Fiche du produit{id}" . request('id');
-});
+Route::get('/product/{id}', '\App\Http\Controllers\ProductController@fiche');
 
-Route::get('/cart', function () {
-    return "Panier";
-});
+Route::get('/cart', '\App\Http\Controllers\CartController@panier');
 
 Route::get('/laravel', function () {
     return view('welcome');
